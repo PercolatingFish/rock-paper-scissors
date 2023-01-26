@@ -3,6 +3,7 @@ function getComputerChoice() {
     return Math.floor(Math.random() * 3 + 1)
 }
 
+// take number of choice, return name of choice
 function rockNamer(choice) {
     if (choice === 1) {
         return "Rock";
@@ -15,6 +16,7 @@ function rockNamer(choice) {
     }
 }
 
+// take name of choice, return number of choice
 function rockParser(choice) {
     if (choice === "rock") {
         return 1;
