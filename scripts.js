@@ -50,6 +50,14 @@ function playRound(playerSelection, computerSelection) {
     }
     if (computerScore >= 5 || playerScore >= 5) {
         scoreDiv.textContent = `Game over!  \nPlayer: ${playerScore} Computer: ${computerScore}`
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
+        
+        const reloadBtn = document.createElement("button");
+        scoreDiv.appendChild(reloadBtn);
+        reloadBtn.textContent = 'Reload?';
+        reloadBtn.addEventListener("click", () => location.reload())
     } else {
         scoreDiv.textContent = `Player: ${playerScore} Computer: ${computerScore}`
     }    
@@ -83,7 +91,6 @@ scissorsBtn.addEventListener('click', () => playRound(3, getComputerChoice()));
 
 const winDiv = document.querySelector('#winDiv');
 const scoreDiv = document.querySelector('#scoreDiv');
-
 
 
 
